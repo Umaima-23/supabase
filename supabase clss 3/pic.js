@@ -2,8 +2,9 @@ import supabase from "./config.js"
 
 let img =document.getElementById('img')
 let uploadBtn =document.getElementById('uploadBtn')
-
+let main = document.getElementById('main')
 let picName;
+
 async function uploadMyFile() {
     // e.preventDefault()
     console.log(img.files[0])
@@ -25,11 +26,32 @@ const { data, error } = await supabase
 
   if(urlDataa){
     console.log(urlDataa.publicUrl);
+    const publicUrl=urlDataa.publicUrl
     const { error } = await supabase
   .from('pics')
-  .insert({ id: 1, name: 'Mordor' })
+  .insert([{ imageUrl: publicUrl }])
     
   }
+  else{
+    console.log(error.message);
+  }
+  }
+
+}
+
+uploadBtn.addEventListener('click',uploadMyFile)
+
+  async function getImages() {
+    const { data, error } = await supabase
+  .from('pics')
+  .select('*')
+  if(data){
+    console.log(data);
+    data.forEach((showImg)=>{
+        main.innerHTML+=`<div ><img src="${showImg.imageUrl} " alt="" width="100px "></div>`
+    })
+}else{
+    console.log(error.message);
   }
 }
-uploadBtn.addEventListener('click',uploadMyFile)
+getImages()

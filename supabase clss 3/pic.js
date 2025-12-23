@@ -32,8 +32,10 @@ const { data, error } = await supabase
   .insert([{ imageUrl: publicUrl }])
     
   }
-  else{
+  if(error){
     console.log(error.message);
+  }else{
+    console.log('pic created successfully')
   }
   }
 

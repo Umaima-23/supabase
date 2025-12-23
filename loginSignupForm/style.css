@@ -1,0 +1,108 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+   background: #F9F3FF;
+background: linear-gradient(90deg, rgba(249, 243, 255, 1) 48%, rgba(211, 159, 216, 1) 100%);
+    overflow: hidden; /* Screen se bahar scroll na ho */
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.left {
+    width: 50%;
+    height: 100%;
+    background-image: url('./images/bggg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+.left::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.buttonss {
+    display: flex;
+    gap: 20px; 
+    margin-top: 30px;
+    width: 100%;
+    justify-content: center;
+}
+
+#signupBtn, #loginBtn {
+    padding: 12px 45px;
+    border: none;
+    border-radius: 25px; 
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#signupBtn {
+    background-color: #8e44ad;
+    color: white;
+}
+
+#signupBtn:hover {
+    background-color: #7d3c98;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(142, 68, 173, 0.4);
+}
+
+/* Login Button - White/Glass Theme */
+#loginBtn {
+    background-color: white;
+    color: #8e44ad;
+    border: 2px solid #8e44ad;
+}
+
+#loginBtn:hover {
+    background-color: #f4ecf7;
+    transform: translateY(-3px);
+}
+
+/* Active Effect */
+#signupBtn:active, #loginBtn:active {
+    transform: translateY(-1px);
+}
+
+/* Responsive adjustment for Mobile */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+    .left, .right {
+        width: 100%;
+        height: 50%;
+    }
+}

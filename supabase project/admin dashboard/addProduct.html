@@ -26,16 +26,57 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Users</a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link active" href="./addProduct.html">Add product</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="main-cont d-flex justify-content-center">
+        <form action="" id="addProd">
+            <div class="col-md-6">
+                <label for="pname " >Product Name
+                    <input type="text" id="pname">
+                </label>
 
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="pprice">Price</label>
+                    <input type="number" id="pprice">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="pcateg">Category </label>
+                    <input type="text" id="pcateg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="pdesc">Description </label>
+                    <textarea name="" id="pdesc"></textarea>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="pimage" class="form-label">Image :</label>
+                <input type="file" name="" id="pimage" class="form-control">
+            </div>
+            <div class="mb-3">
+                <button type="button" id="addColor" class="btn btn-outline-primary ">Add Color</button>
+                <div id="clrGrp"></div>
+            </div>
+            <div class="mb-3">
+                <button id="addcart" type="submit" class="btn btn-primary" >Add to cart</button>
+            </div>
+        </form>
+    </div>
+    <!-- products -->
+    <div id="allProd"></div>
     
     <script type="module" src="./dashboard.js"></script>
+    <script type="module" src="../index.js"></script>
 </body>
 
 </html>
